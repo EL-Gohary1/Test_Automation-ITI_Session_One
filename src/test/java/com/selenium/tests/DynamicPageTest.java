@@ -16,18 +16,27 @@ import java.time.Duration;
 
 public class DynamicPageTest {
 
+    // Create a ThreadLocal variable to hold the WebDriver instance for each thread to ensure thread safety when running tests in parallel
     private ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
 
+    // Getter method to retrieve the WebDriver instance from the ThreadLocal variable to be used in the test methods
     public WebDriver getDriver() {
         return driverThread.get();
     }
 
+    // The setUp method is annotated with @BeforeMethod,
+    // which means it will be executed before each test method in the class.
+    // It initializes a new instance of the ChromeDriver and sets it to the ThreadLocal variable, ensuring that each test method has its own WebDriver instance.
+    // reduce code duplication by centralizing the WebDriver initialization logic in one place,
+    // making it easier to manage and maintain the WebDriver instances across multiple test methods.
     @BeforeMethod
     public void setUp() {
         // Create a new instance of the ChromeDriver and set it to the ThreadLocal variable
         driverThread.set(new ChromeDriver());
     }
 
+    // The tearDown method is annotated with @AfterMethod, which means it will be executed after each test method in the class.
+    // It retrieves the WebDriver instance from the ThreadLocal variable and calls the quit() method to close the browser after each test method.
     @AfterMethod
     public void tearDown() {
         // Quit the WebDriver instance to close the browser after each test method
