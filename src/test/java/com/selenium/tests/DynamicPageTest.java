@@ -17,7 +17,7 @@ import java.time.Duration;
 public class DynamicPageTest {
 
     // Create a ThreadLocal variable to hold the WebDriver instance for each thread to ensure thread safety when running tests in parallel
-    private ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
+    private final ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
 
     // Getter method to retrieve the WebDriver instance from the ThreadLocal variable to be used in the test methods
     public WebDriver getDriver() {
