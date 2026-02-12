@@ -44,7 +44,7 @@ public class DynamicPageTest {
     }
 
     @Test
-    public void checkButtonAddBox() {
+    public void checkButtonAddBox() {   //input[name='my-password']
         // Navigate to the dynamic page
         getDriver().navigate().to("https://www.selenium.dev/selenium/web/dynamic.html");
         // Set an implicit wait of 10 seconds for the WebDriver
