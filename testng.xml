@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="E:/iti/java/projects/AutomationTest1">
+        <classes>
+            <class name="com.selenium.tests.DynamicPageTest">
+                <methods>
+                    <include name="checkButtonAddBox"/>
+                    <include name="checkRevealNewInput"/>
+                </methods>
+            </class>
+            <class name="com.selenium.tests.WebFormTest">
+                <methods>
+                    <include name="checkFormSubmittedMessage"/>
+                    <include name="checkReadonlyInput"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
