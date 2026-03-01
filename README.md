@@ -183,10 +183,12 @@ Go to **Manage Jenkins** → **Tools** and configure the following:
 ### Step 4 — Create a Freestyle Job
 
 1. Click **New Item** → Enter a name → Select **Freestyle Project** → Click OK
-2. Under **Build Steps** → Add **Invoke top-level Maven targets**:
+2. Under Source Code Management → Select Git: Add 
+   - https://github.com/EL-Gohary1/Test_Automation-ITI_Jenkins.git
+3. Under **Build Steps** → Add **Invoke top-level Maven targets**:
    ```
    Goals: clean test
    ```
-3. Under **Post-build Actions** → Add **Allure Report**:
+4. Under **Post-build Actions** → Add **Allure Report**:
    - Set Results Path to: `allure-results`
-4. Click **Save** then **Build Now**
+5. Click **Save** then **Build Now**
